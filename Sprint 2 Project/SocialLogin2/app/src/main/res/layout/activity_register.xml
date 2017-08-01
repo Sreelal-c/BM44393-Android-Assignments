@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fb_light"
+    tools:context="com.sreelalc.sociallogin.RegisterActivity">
+
+    <EditText
+        android:id="@+id/pass1"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="11dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:layout_below="@+id/email1"
+        android:layout_alignStart="@+id/email1" />
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:layout_marginTop="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="28dp" />
+
+    <EditText
+        android:id="@+id/lname"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:layout_above="@+id/email1"
+        android:layout_alignEnd="@+id/email1"/>
+
+    <EditText
+        android:id="@+id/email1"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:layout_below="@+id/fname"
+        android:layout_alignStart="@+id/fname" />
+
+    <Spinner
+        android:id="@+id/day"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:background="@android:color/white"
+        android:layout_alignTop="@+id/month"
+        android:layout_alignStart="@+id/pass1" />
+
+    <Spinner
+        android:id="@+id/month"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@android:color/white"
+        android:layout_alignTop="@+id/year"
+        android:layout_alignEnd="@+id/radioGroup" />
+
+    <Spinner
+        android:id="@+id/year"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@android:color/white"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/pass1"
+        android:layout_alignEnd="@+id/pass1" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/fb_blue_dark"
+        android:onClick="registerUser"
+        android:text="Register Account"
+        android:textColor="@android:color/white" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/day"
+        android:layout_alignStart="@+id/day"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/gender_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:onClick="onRadioButtonClicked"
+            android:text="MAle" />
+
+        <RadioButton
+            android:id="@+id/gender_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Female"
+            android:layout_weight="1.90" />
+    </RadioGroup>
+
+</RelativeLayout>
