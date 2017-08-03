@@ -34,12 +34,7 @@ public class MainActivity extends AppCompatActivity {
             Database reg = new Database(this);
             SQLiteDatabase db = reg.getReadableDatabase();
             Cursor c = db.query("tbl_user", null, "email =? and password =? ", args, null, null, null);
-           // Cursor c = db.query("tbl_user", null, null, null, null, null, null);
             c.moveToFirst();
-            //do {
-                  //System.out.println("name = " + c.getString(0));
-                 //System.out.println("password = " + c.getString(1));
-                //Toast.makeText(this, c.getString(1), Toast.LENGTH_SHORT).show();
                 if (c.getString(2).equals(email) && c.getString(3).equals(password)) {
                     errorText.setVisibility(View.GONE);
                     loginError = false;
@@ -50,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 else loginError  = true;
-            //}while (c.moveToNext());
             if(loginError) {
                 errorText.setVisibility(View.VISIBLE);
 
@@ -58,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (Exception e){
             e.printStackTrace();
-            Toast t = Toast.makeText(this,"Error occured", Toast.LENGTH_SHORT);
+            Toast.makeText(this,"Error occured", Toast.LENGTH_SHORT);
         }
     }
 }

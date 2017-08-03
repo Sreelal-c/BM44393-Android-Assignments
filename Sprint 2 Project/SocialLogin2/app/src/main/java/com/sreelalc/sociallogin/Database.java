@@ -21,14 +21,12 @@ public class Database extends SQLiteOpenHelper {
                 "TEXT, " +
                 "password TEXT, dob TEXT , gender" +
                 " TEXT, picture BLOB)");
-        //db.execSQL("Create table tbl_picture(picture BLOB)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
         db.execSQL("Drop table if exists tbl_user");
-        //db.execSQL("Drop table if exists tbl_picture");
         onCreate(db);
     }
 

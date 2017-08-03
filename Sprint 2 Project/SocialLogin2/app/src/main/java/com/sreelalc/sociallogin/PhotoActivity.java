@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,15 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class PhotoActivity extends AppCompatActivity {
 
-    ImageView imageView,imageView2;
+    ImageView imageView;
     String uid;
 
     @Override
@@ -32,8 +29,6 @@ public class PhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
         imageView = (ImageView) findViewById(R.id.imageView);
-        //imageView2 = (ImageView) findViewById(R.id.imageView2);
-
         uid = getIntent().getExtras().getString("userid");
     }
 

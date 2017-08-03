@@ -113,18 +113,18 @@ public class RegisterActivity extends AppCompatActivity {
 
         ContentValues mContent = new ContentValues();
 
-        EditText fname = (EditText) findViewById(R.id.fname);
-        EditText lname = (EditText) findViewById(R.id.lname);
+        //EditText fname = (EditText) findViewById(R.id.fname);
+        //EditText lname = (EditText) findViewById(R.id.lname);
         //EditText pass1 = (EditText) findViewById(R.id.pass1);
         //EditText pass2 = (EditText) findViewById(R.id.pass2);
         //EditText email1 = (EditText) findViewById(R.id.email1);
         //EditText email2 = (EditText) findViewById(R.id.email2);
 
-        String first_name = fname.getText().toString();
-        String last_name = lname.getText().toString();
-         password1 = ((EditText) findViewById(R.id.pass1)).getText().toString();
-        // String password2 = ((EditText) findViewById(R.id.pass2)).getText().toString();
+        String first_name = ((EditText) findViewById(R.id.fname)).getText().toString();
+        String last_name = ((EditText) findViewById(R.id.lname)).getText().toString();
+        password1 = ((EditText) findViewById(R.id.pass1)).getText().toString();
         email1 = ((EditText) findViewById(R.id.email1)).getText().toString();
+        // String password2 = ((EditText) findViewById(R.id.pass2)).getText().toString();
         //String email2 = ((EditText) findViewById(R.id.email2)).getText().toString();
 
 
@@ -157,16 +157,11 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
 
-
         try {
-
-
-            String dob =  day + month + year;
-            mContent.put("dob", dob);
-
-
-             i = db.insert("tbl_user", "name,email,password,gender,dob", mContent);
-              System.out.print("register row = " + i);
+                String dob =  day + month + year;
+                mContent.put("dob", dob);
+                i = db.insert("tbl_user", "name,email,password,gender,dob", mContent);
+                System.out.print("register row = " + i);
         }
 
         catch (Exception e) {
